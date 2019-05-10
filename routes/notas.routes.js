@@ -71,11 +71,11 @@ router.put('/agg/:id', async (req, res) => { //consulta los estudiantes para ver
 });
 
 
-router.post('/promedio/:id', async (req, res) => { //muestra los
+router.post('/promedio/:id', async (req, res) => { // retorna el promedio de un curso
     try {
         const Courses = await modelNotas.find({idCurso:req.params.id }) //busca las todas notas de un curso
 
-        const rep = await Courses.map((item) => {
+        const rep = await Courses.map((item) => { // filtra solo el estudiante y la nota para poder sacar el promedio 
             return {
                 idEstudiante : item.idEstudiante,
                 calificacion: parseInt(item.calificacion)

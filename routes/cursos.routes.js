@@ -3,7 +3,7 @@ import modelCursos from '../models/cursos';
 
 const router = Router()
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { //muestra los cursos
     try {
         const all_Cursos = await modelCursos.find({})
         res.json(all_Cursos)
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res) => { // agg curso
     try {
         const {nombre} = req.body
         const nuevoCurso = new modelCursos({ nombre})    
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     } 
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => { // actualizar curso
     try {
         const {nombre} = req.body 
         const {id} = req.params   
@@ -34,7 +34,7 @@ router.put('/:id', async (req, res) => {
     }     
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => { //eliminar curso
     try {
         const {id} = req.params   
         await modelCursos.findByIdAndDelete(id)
