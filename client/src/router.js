@@ -4,6 +4,7 @@ import Estudiantes from './views/Estudiantes.vue'
 import Cursos from './views/Cursos.vue'
 import Gestion from './views/Gestion.vue'
 import Home from './views/Home.vue'
+import Gestion_notas from './views/Gestion_notas.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/gestion',
       name: 'Gestion',
       component: Gestion
+    },
+    {
+      path: '/gestion_notas',
+      name: 'Gestion_notas',
+      component: Gestion_notas
     }
   ]
 })
