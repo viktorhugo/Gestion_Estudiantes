@@ -7,7 +7,7 @@
     "start": "PORT=8000 nodemon app.js --exec babel-node"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mongoose": "^5.5.6"
   },
   "keywords": [],
